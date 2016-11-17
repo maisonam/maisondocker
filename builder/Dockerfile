@@ -1,6 +1,11 @@
+FROM nginx:1
 FROM ingeus/ubuntu-base:latest
 
 MAINTAINER Ason Matthews <ason.matthews@gmail.com>
+
+COPY client /usr/share/nginx/html
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 RUN curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
 
